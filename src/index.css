@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-gold: #f59e0b;
+    --color-gold-light: #fbbf24;
+    --color-gold-dark: #d97706;
+    --color-gold-glow: rgba(245, 158, 11, 0.15);
+  }
+}
