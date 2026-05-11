@@ -25,6 +25,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tools.jonascode.com/tools/minecraft-server-properties-generator</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://tools.jonascode.com/tools/discord-announcement-generator</loc>
     <priority>0.8</priority>
   </url>
