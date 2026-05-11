@@ -5,7 +5,7 @@ function PopularTools({ tools }) {
 
   return (
     <section className="border-b border-slate-800/80">
-      <div className="mx-auto max-w-6xl px-4 py-8 sm:py-12 lg:py-16">
+      <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10 lg:py-14">
         <div className="flex items-center gap-3 mb-6 sm:mb-8">
           <h2 className="text-lg sm:text-xl font-semibold text-white">Popular Tools</h2>
           <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-0.5 text-[10px] sm:text-xs font-medium text-amber-400">

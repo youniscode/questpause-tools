@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import ScrollToHash from "./components/ScrollToHash.jsx";
 import ToolsIndex from "./pages/tools/ToolsIndex.jsx";
 import MinecraftWhitelistCommandGenerator from "./pages/tools/minecraft/MinecraftWhitelistCommandGenerator.jsx";
 import MinecraftServerRulesGenerator from "./pages/tools/minecraft/MinecraftServerRulesGenerator.jsx";
@@ -15,6 +16,7 @@ const TermsOfUse = lazy(() => import("./pages/legal/TermsOfUse.jsx"));
 export default function App() {
   return (
     <Suspense fallback={<div className="min-h-screen bg-slate-950" />}>
+      <ScrollToHash />
       <Routes>
         <Route path="/" element={<Navigate to="/tools" replace />} />
         <Route path="/tools" element={<ToolsIndex />} />

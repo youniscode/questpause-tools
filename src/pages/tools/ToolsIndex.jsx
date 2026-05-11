@@ -5,6 +5,7 @@ import ToolsHero from "../../components/tools/ToolsHero.jsx";
 import PopularTools from "../../components/tools/PopularTools.jsx";
 import ToolCard from "../../components/tools/ToolCard.jsx";
 import CategoryPill from "../../components/tools/CategoryPill.jsx";
+import ScrollToHash from "../../components/ScrollToHash.jsx";
 import { setSEO } from "../../utils/seo.js";
 import { toolsRegistry, CATEGORIES, CATEGORY_COLORS, CATEGORY_ICONS } from "../../features/tools/toolsRegistry.js";
 
@@ -17,6 +18,15 @@ const seo = {
 const POPULAR_IDS = new Set(
   toolsRegistry.filter((t) => t.isPopular).map((t) => t.id),
 );
+
+const toSectionId = (cat) => cat.toLowerCase().replace(/\s+/g, "-") + "-tools";
+
+const gridCols = (count) => {
+  if (count === 1) return "grid-cols-1 sm:grid-cols-1 max-w-sm";
+  if (count === 2) return "grid-cols-1 sm:grid-cols-2";
+  if (count === 3) return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
+  return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4";
+};
 
 function ToolsIndex() {
   const [search, setSearch] = useState("");
@@ -79,6 +89,7 @@ function ToolsIndex() {
     <>
       <main className="min-h-screen bg-slate-950 text-slate-100">
         <ToolsHeader />
+        <ScrollToHash />
 
         <ToolsHero
           search={search}
@@ -100,8 +111,8 @@ function ToolsIndex() {
         ) : (
           <>
             <section className="border-b border-slate-800/80">
-              <div className="mx-auto max-w-6xl px-4 py-8 sm:py-12 lg:py-16">
-                <h2 className="text-lg sm:text-xl font-semibold text-white mb-6 sm:mb-8">
+              <div className="mx-auto max-w-6xl px-4 py-6 sm:py-10 lg:py-14">
+                <h2 className="text-lg sm:text-xl font-semibold text-white mb-5 sm:mb-6">
                   {activeCategory !== "All" ? `${activeCategory} Tools` : "All Tools"}
                 </h2>
 
@@ -112,16 +123,16 @@ function ToolsIndex() {
                     ))}
                   </div>
                 ) : (
-                  <div className="flex flex-col gap-8 sm:gap-10 lg:gap-12">
+                  <div className="flex flex-col gap-6 sm:gap-8 lg:gap-10">
                     {Object.entries(grouped).map(([category, tools]) => (
-                      <div key={category}>
-                        <div className="flex items-center gap-3 mb-4 sm:mb-6">
+                      <div key={category} id={toSectionId(category)} className="scroll-mt-24">
+                        <div className="flex items-center gap-3 mb-3 sm:mb-4">
                           <CategoryPill category={category} size="lg" />
                           <span className="text-xs sm:text-sm text-slate-500">
                             {tools.length} tool{tools.length !== 1 ? "s" : ""}
                           </span>
                         </div>
-                        <div className="grid gap-4 sm:gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                        <div className={`grid gap-4 sm:gap-5 ${gridCols(tools.length)}`}>
                           {tools.map((tool) => (
                             <ToolCard key={tool.id} tool={tool} />
                           ))}
