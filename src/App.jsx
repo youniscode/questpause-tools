@@ -6,6 +6,7 @@ import MinecraftWhitelistCommandGenerator from "./pages/tools/minecraft/Minecraf
 import MinecraftServerRulesGenerator from "./pages/tools/minecraft/MinecraftServerRulesGenerator.jsx";
 import MinecraftLfgPostGenerator from "./pages/tools/minecraft/MinecraftLfgPostGenerator.jsx";
 import MinecraftMOTDGenerator from "./pages/tools/minecraft/MinecraftMOTDGenerator.jsx";
+import MinecraftWhitelistApplicationGenerator from "./pages/tools/minecraft/MinecraftWhitelistApplicationGenerator.jsx";
 import MinecraftServerPropertiesGenerator from "./pages/tools/minecraft/MinecraftServerPropertiesGenerator.jsx";
 import DiscordAnnouncementGenerator from "./pages/tools/discord/DiscordAnnouncementGenerator.jsx";
 import ServerMaintenanceMessageGenerator from "./pages/tools/server-admin/ServerMaintenanceMessageGenerator.jsx";
@@ -27,6 +28,10 @@ export default function App() {
         <Route
           path="/tools/minecraft-whitelist-command-generator"
           element={<MinecraftWhitelistCommandGenerator />}
+        />
+        <Route
+          path="/tools/minecraft-whitelist-application-generator"
+          element={<MinecraftWhitelistApplicationGenerator />}
         />
         <Route
           path="/tools/minecraft-server-rules-generator"
