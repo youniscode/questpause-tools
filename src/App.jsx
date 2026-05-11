@@ -9,6 +9,7 @@ import DiscordAnnouncementGenerator from "./pages/tools/discord/DiscordAnnouncem
 import ServerMaintenanceMessageGenerator from "./pages/tools/server-admin/ServerMaintenanceMessageGenerator.jsx";
 import ProjectZomboidModListFormatter from "./pages/tools/project-zomboid/ProjectZomboidModListFormatter.jsx";
 import ValheimAdminCommandHelper from "./pages/tools/valheim/ValheimAdminCommandHelper.jsx";
+import ValheimServerRulesGenerator from "./pages/tools/valheim/ValheimServerRulesGenerator.jsx";
 import ProjectZomboidServerSettingsHelper from "./pages/tools/project-zomboid/ProjectZomboidServerSettingsHelper.jsx";
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy.jsx"));
 const TermsOfUse = lazy(() => import("./pages/legal/TermsOfUse.jsx"));
@@ -43,6 +44,10 @@ export default function App() {
         <Route
           path="/tools/project-zomboid-mod-list-formatter"
           element={<ProjectZomboidModListFormatter />}
+        />
+        <Route
+          path="/tools/valheim-server-rules-generator"
+          element={<ValheimServerRulesGenerator />}
         />
         <Route
           path="/tools/valheim-admin-command-helper"
