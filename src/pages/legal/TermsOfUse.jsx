@@ -55,6 +55,24 @@ function TermsOfUse() {
 
               <div>
                 <h2 className="text-lg font-semibold text-white">
+                  Tool Usage and Responsibility
+                </h2>
+                <p className="mt-2">
+                  Tools are provided for convenience and informational or admin
+                  support. You are responsible for testing generated commands,
+                  settings, and rules before using them on live servers. Generated
+                  content may need review and adjustment for your specific server
+                  setup.
+                </p>
+                <p className="mt-2">
+                  You must follow the rules and terms of the games and platforms you
+                  operate on. Do not use these tools for abuse, harassment, cheating,
+                  griefing, or any harmful activity.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-lg font-semibold text-white">
                   No Warranty
                 </h2>
                 <p className="mt-2">
@@ -72,6 +90,17 @@ function TermsOfUse() {
                   QUESTPAUSE shall not be liable for any damages arising from the use
                   or inability to use these tools, including but not limited to
                   server configuration issues, gameplay disputes, or data loss.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-lg font-semibold text-white">
+                  Affiliation
+                </h2>
+                <p className="mt-2">
+                  This site is not affiliated with Mojang, Microsoft, Discord, The
+                  Indie Stone, Iron Gate, RocketWerkz, The Fun Pimps, or other game
+                  publishers referenced on this site.
                 </p>
               </div>
 

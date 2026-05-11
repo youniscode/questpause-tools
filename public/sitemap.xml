@@ -93,6 +93,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tools.jonascode.com/about</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://tools.jonascode.com/contact</loc>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://tools.jonascode.com/privacy-policy</loc>
     <priority>0.3</priority>
   </url>

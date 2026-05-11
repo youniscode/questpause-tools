@@ -33,8 +33,9 @@ function PrivacyPolicy() {
                 <h2 className="text-lg font-semibold text-white">Summary</h2>
                 <p className="mt-2">
                   QUESTPAUSE Tools are free browser-based utilities. The tools run
-                  entirely in your browser. No user accounts, no login, and no
-                  payment processing is involved.
+                  entirely in your browser. QUESTPAUSE Tools currently does not require
+                  accounts, does not process payments, and does not intentionally collect
+                  personal account data.
                 </p>
               </div>
 
@@ -55,12 +56,16 @@ function PrivacyPolicy() {
               </div>
 
               <div>
-                <h2 className="text-lg font-semibold text-white">Cookies</h2>
+                <h2 className="text-lg font-semibold text-white">Cookies and Advertising</h2>
                 <p className="mt-2">
-                  This website does not currently set any cookies. If analytics or
-                  advertising are added in the future, third-party services may set
-                  cookies for functionality and measurement. You will be informed
-                  of any changes.
+                  This website does not currently set any cookies. If advertising is
+                  added in the future, third-party advertising partners such as Google
+                  may use cookies or similar technologies to serve and measure ads.
+                </p>
+                <p className="mt-2">
+                  Users in regions where consent is required may be shown a consent
+                  choice before personalized ads are used. The site may later use
+                  privacy-friendly analytics or advertising measurement.
                 </p>
               </div>
 
@@ -72,6 +77,17 @@ function PrivacyPolicy() {
                   We do not sell, trade, or share your personal data with third
                   parties. Any future analytics or advertising services will be
                   subject to their own privacy policies.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-lg font-semibold text-white">
+                  User Responsibilities
+                </h2>
+                <p className="mt-2">
+                  Users should not submit sensitive personal data into free text
+                  fields within the tools. Generated output stays in your browser
+                  and is not transmitted to our servers.
                 </p>
               </div>
 

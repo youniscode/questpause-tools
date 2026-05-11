@@ -51,6 +51,8 @@
 | 24 | Terms of Use | — | `/terms` | — | live | yes | yes | no |
 | 25 | Home (redirect) | — | `/` | — | redirects to `/tools` | yes | yes | no |
 | 26 | Not Found (404 catch-all) | — | `*` | — | catch-all | no | yes | no |
+| 27 | About | — | `/about` | — | live | yes | yes | no |
+| 28 | Contact | — | `/contact` | — | live | yes | yes | no |
 
 **Total live tools:** 21
 
@@ -116,8 +118,9 @@
 - **Index:** `<Route path="/tools" element={<ToolsIndex />} />`
 - **Home:** `<Route path="/" element={<Navigate to="/tools" replace />} />`
 - **Legal:** `<Route path="/privacy-policy">` and `<Route path="/terms">`
-- **SPA behavior:** All `/tools/*` routes are handled client-side by React Router
-- **Vercel rewrites (vercel.json):** All `/tools`, `/tools/:path*`, `/privacy-policy`, `/terms` rewrite to `/index.html` to support direct URL access and refresh
+- **Info:** `<Route path="/about">` and `<Route path="/contact">`
+- **SPA behavior:** All routes handled client-side by React Router
+- **Vercel rewrites (vercel.json):** Catch-all `/:path*` rewrites to `/index.html` to support direct URL access and refresh on all routes
 - **No server-side rendering:** Everything is client-side React (Vite + React Router)
 
 ## SEO System
@@ -148,7 +151,7 @@
   - `/` = 1.0
   - `/tools` = 0.9
   - All tool routes = 0.8
-  - Privacy/Terms = 0.3
+  - Privacy/Terms/About/Contact = 0.3
 
 ## Design System
 - **Visual direction:** Premium dark gaming dashboard
@@ -190,6 +193,7 @@ All located in `src/components/tools/`:
 | `RelatedTools` | `RelatedTools.jsx` | Renders related tools section using `ToolCard` with data from `getRelatedTools()` in registry |
 | `ScrollToHash` | `ScrollToHash.jsx` | Scrolls to hash anchor on route changes (for category nav links like `/tools#minecraft-tools`) |
 | `ToolPageLayout` | `ToolPageLayout.jsx` | Optional wrapper layout for tool pages (not used by any current tool — all tools use inline layout) |
+| `AdSlotPlaceholder` | `AdSlotPlaceholder.jsx` | Future ad slot placeholder. Renders nothing unless `devOnly={false}`. Positions: `below-hero`, `between-generator-and-seo`, `sidebar` |
 
 ## Build and Deployment
 - **Build command:** `npm run build`
@@ -201,7 +205,40 @@ All located in `src/components/tools/`:
 - **Production URL:** https://tools.jonascode.com
 - **GitHub repo:** questpause-tools (private)
 
-## Current Known Issues
+## Monetization Plan
+
+### Current Status
+- No ads, no analytics, no affiliate links, no paid features
+- All 21 tools are free and browser-based
+- No backend, no database, no login, no payment processing
+
+### Future Platform
+- **Target:** Google AdSense
+- **Timing:** After Search Console indexing, some real traffic, and consent infrastructure
+- **Constraints:**
+  - Must not click own ads
+  - Must not ask community members to click ads
+  - Must avoid layouts that cause accidental clicks (no ads near buttons/output areas)
+  - Must use proper consent solution before personalized ads in EEA/UK/Switzerland
+  - Must keep privacy policy updated before enabling ads
+
+### Planned Ad Slot Positions
+1. **Below hero/introduction** — After the tool's hero section, before the generator form
+2. **Between generator and SEO content** — After tool output, before how-to/FAQ sections
+3. **Desktop sidebar** — Visible on widescreen only, beside main tool content
+
+### Ad Slot Infrastructure
+- **Component:** `src/components/tools/AdSlotPlaceholder.jsx`
+- **Behavior:** Renders nothing unless `devOnly={false}` is passed (safe to deploy now)
+- **Positions defined:** `below-hero`, `between-generator-and-seo`, `sidebar`
+- **When ads go live:** Replace `<AdSlotPlaceholder>` with actual ad code, pass `devOnly={false}`, deploy
+
+### Prohibited Before Ad Enablement
+- No ad script loaded until explicitly enabled
+- No fake ad content visible to users
+- No analytics script loaded (privacy-friendly analytics may be added as separate step)
+
+## Shared Components
 - Build: Main JS chunk > 500 kB warning (pre-existing, non-blocking)
 - All other audit checks passed (route-to-registry parity, sitemap completeness, SEO title uniqueness, internal link validity, no jonascode.com backlinks)
 
@@ -302,3 +339,4 @@ Next recommended step:
 | 2026-05-11 | v1 audit: fixed missing `minecraft-lfg-post-generator` in toolsRegistry.js, added ICARUS/7DTD nav links and category descriptions | None (registry + nav + descriptions only) | Passed (npm run build) |
 | 2026-05-11 | Added branded 404 catch-all route | `*` (catch-all) | Passed (npm run build) |
 | 2026-05-11 | Added Minecraft Command Generator | `/tools/minecraft-command-generator` | Passed (npm run build) |
+| 2026-05-11 | AdSense preparation: added /about, /contact, updated Privacy/Terms, footer disclaimer, AdSlotPlaceholder, Monetization Plan | `/about`, `/contact` | Passed (npm run build) |

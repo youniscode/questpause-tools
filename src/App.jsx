@@ -24,6 +24,8 @@ import ProjectZomboidSafehouseRulesGenerator from "./pages/tools/project-zomboid
 import ICARUSServerRulesGenerator from "./pages/tools/icarus/ICARUSServerRulesGenerator.jsx";
 import SevenDaysToDieServerRulesGenerator from "./pages/tools/7-days-to-die/SevenDaysToDieServerRulesGenerator.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
+import ContactPage from "./pages/ContactPage.jsx";
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy.jsx"));
 const TermsOfUse = lazy(() => import("./pages/legal/TermsOfUse.jsx"));
 
@@ -118,6 +120,8 @@ export default function App() {
           path="/tools/7-days-to-die-server-rules-generator"
           element={<SevenDaysToDieServerRulesGenerator />}
         />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="*" element={<NotFoundPage />} />
