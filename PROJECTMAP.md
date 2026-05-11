@@ -32,35 +32,38 @@
 | 5 | Minecraft LFG Post Generator | Minecraft | `/tools/minecraft-lfg-post-generator` | `minecraft-lfg-post-generator` | live | yes | yes | yes |
 | 6 | Minecraft MOTD Generator | Minecraft | `/tools/minecraft-motd-generator` | `minecraft-motd-generator` | live | yes | yes | yes |
 | 7 | Minecraft server.properties Generator | Minecraft | `/tools/minecraft-server-properties-generator` | `minecraft-server-properties-generator` | live | yes | yes | yes |
-| 8 | Discord Announcement Generator | Discord | `/tools/discord-announcement-generator` | `discord-announcement-generator` | live | yes | yes | yes |
-| 9 | Discord Rules Generator | Discord | `/tools/discord-rules-generator` | `discord-rules-generator` | live | yes | yes | yes |
-| 10 | Discord Welcome Message Generator | Discord | `/tools/discord-welcome-message-generator` | `discord-welcome-message-generator` | live | yes | yes | yes |
-| 11 | Server Maintenance Message Generator | Server Admin | `/tools/server-maintenance-message-generator` | `server-maintenance-message-generator` | live | yes | yes | yes |
-| 12 | Server Status Message Generator | Server Admin | `/tools/server-status-message-generator` | `server-status-message-generator` | live | yes | yes | yes |
-| 13 | Project Zomboid Admin Message Generator | Project Zomboid | `/tools/project-zomboid-admin-message-generator` | `project-zomboid-admin-message-generator` | live | yes | yes | yes |
-| 14 | Project Zomboid Mod List Formatter | Project Zomboid | `/tools/project-zomboid-mod-list-formatter` | `project-zomboid-mod-list-formatter` | live | yes | yes | yes |
-| 15 | Project Zomboid Server Settings Helper | Project Zomboid | `/tools/project-zomboid-server-settings-helper` | `project-zomboid-server-settings-helper` | live | yes | yes | yes |
-| 16 | Project Zomboid Safehouse Rules Generator | Project Zomboid | `/tools/project-zomboid-safehouse-rules-generator` | `project-zomboid-safehouse-rules-generator` | live | yes | yes | yes |
-| 17 | Valheim Server Rules Generator | Valheim | `/tools/valheim-server-rules-generator` | `valheim-server-rules-generator` | live | yes | yes | yes |
-| 18 | Valheim Admin Command Helper | Valheim | `/tools/valheim-admin-command-helper` | `valheim-admin-command-helper` | live | yes | yes | yes |
-| 19 | Valheim Event Announcement Generator | Valheim | `/tools/valheim-event-announcement-generator` | `valheim-event-announcement-generator` | live | yes | yes | yes |
-| 20 | ICARUS Server Rules Generator | ICARUS | `/tools/icarus-server-rules-generator` | `icarus-server-rules-generator` | live | yes | yes | yes |
-| 21 | 7 Days to Die Server Rules Generator | 7 Days to Die | `/tools/7-days-to-die-server-rules-generator` | `7-days-to-die-server-rules-generator` | live | yes | yes | yes |
-| 22 | Privacy Policy | — | `/privacy-policy` | — | live | yes | yes | no |
-| 23 | Terms of Use | — | `/terms` | — | live | yes | yes | no |
-| 24 | Home (redirect) | — | `/` | — | redirects to `/tools` | yes | yes | no |
+| 8 | Minecraft Command Generator | Minecraft | `/tools/minecraft-command-generator` | `minecraft-command-generator` | live | yes | yes | yes |
+| 9 | Discord Announcement Generator | Discord | `/tools/discord-announcement-generator` | `discord-announcement-generator` | live | yes | yes | yes |
+| 10 | Discord Rules Generator | Discord | `/tools/discord-rules-generator` | `discord-rules-generator` | live | yes | yes | yes |
+| 11 | Discord Welcome Message Generator | Discord | `/tools/discord-welcome-message-generator` | `discord-welcome-message-generator` | live | yes | yes | yes |
+| 12 | Server Maintenance Message Generator | Server Admin | `/tools/server-maintenance-message-generator` | `server-maintenance-message-generator` | live | yes | yes | yes |
+| 13 | Server Status Message Generator | Server Admin | `/tools/server-status-message-generator` | `server-status-message-generator` | live | yes | yes | yes |
+| 14 | Project Zomboid Admin Message Generator | Project Zomboid | `/tools/project-zomboid-admin-message-generator` | `project-zomboid-admin-message-generator` | live | yes | yes | yes |
+| 15 | Project Zomboid Mod List Formatter | Project Zomboid | `/tools/project-zomboid-mod-list-formatter` | `project-zomboid-mod-list-formatter` | live | yes | yes | yes |
+| 16 | Project Zomboid Server Settings Helper | Project Zomboid | `/tools/project-zomboid-server-settings-helper` | `project-zomboid-server-settings-helper` | live | yes | yes | yes |
+| 17 | Project Zomboid Safehouse Rules Generator | Project Zomboid | `/tools/project-zomboid-safehouse-rules-generator` | `project-zomboid-safehouse-rules-generator` | live | yes | yes | yes |
+| 18 | Valheim Server Rules Generator | Valheim | `/tools/valheim-server-rules-generator` | `valheim-server-rules-generator` | live | yes | yes | yes |
+| 19 | Valheim Admin Command Helper | Valheim | `/tools/valheim-admin-command-helper` | `valheim-admin-command-helper` | live | yes | yes | yes |
+| 20 | Valheim Event Announcement Generator | Valheim | `/tools/valheim-event-announcement-generator` | `valheim-event-announcement-generator` | live | yes | yes | yes |
+| 21 | ICARUS Server Rules Generator | ICARUS | `/tools/icarus-server-rules-generator` | `icarus-server-rules-generator` | live | yes | yes | yes |
+| 22 | 7 Days to Die Server Rules Generator | 7 Days to Die | `/tools/7-days-to-die-server-rules-generator` | `7-days-to-die-server-rules-generator` | live | yes | yes | yes |
+| 23 | Privacy Policy | — | `/privacy-policy` | — | live | yes | yes | no |
+| 24 | Terms of Use | — | `/terms` | — | live | yes | yes | no |
+| 25 | Home (redirect) | — | `/` | — | redirects to `/tools` | yes | yes | no |
+| 26 | Not Found (404 catch-all) | — | `*` | — | catch-all | no | yes | no |
 
-**Total live tools:** 20
+**Total live tools:** 21
 
 ## Tool Categories
 
-### Minecraft (6 tools)
+### Minecraft (7 tools)
 1. Minecraft Whitelist Command Generator
 2. Minecraft Whitelist Application Generator
 3. Minecraft Server Rules Generator
 4. Minecraft LFG Post Generator
 5. Minecraft MOTD Generator
 6. Minecraft server.properties Generator
+7. Minecraft Command Generator
 
 ### Discord (3 tools)
 1. Discord Announcement Generator
@@ -199,12 +202,11 @@ All located in `src/components/tools/`:
 - **GitHub repo:** questpause-tools (private)
 
 ## Current Known Issues
-- Router: No 404 catch-all route exists; bad routes get blank SPA fallback (no "Not Found" page)
 - Build: Main JS chunk > 500 kB warning (pre-existing, non-blocking)
 - All other audit checks passed (route-to-registry parity, sitemap completeness, SEO title uniqueness, internal link validity, no jonascode.com backlinks)
 
 ## Backlog: Next Suggested Tools
-- Minecraft Command Generator (comprehensive /help-style)
+- (none currently suggested)
 
 
 ## New Tool Checklist
@@ -297,4 +299,6 @@ Next recommended step:
 | 2026-05-11 | Added Valheim Event Announcement Generator | `/tools/valheim-event-announcement-generator` | Passed (npm run build) |
 | 2026-05-11 | Added ICARUS Server Rules Generator | `/tools/icarus-server-rules-generator` | Passed (npm run build) |
 | 2026-05-11 | Added 7 Days to Die Server Rules Generator | `/tools/7-days-to-die-server-rules-generator` | Passed (npm run build) |
-| 2026-05-11 | v1 audit: fixed missing `minecraft-lfg-post-generator` in toolsRegistry.js, added ICARUS/7DTD nav links and category descriptions | None (registry + nav + descriptions only) | Pending build |
+| 2026-05-11 | v1 audit: fixed missing `minecraft-lfg-post-generator` in toolsRegistry.js, added ICARUS/7DTD nav links and category descriptions | None (registry + nav + descriptions only) | Passed (npm run build) |
+| 2026-05-11 | Added branded 404 catch-all route | `*` (catch-all) | Passed (npm run build) |
+| 2026-05-11 | Added Minecraft Command Generator | `/tools/minecraft-command-generator` | Passed (npm run build) |

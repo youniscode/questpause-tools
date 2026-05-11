@@ -12,7 +12,7 @@ export const toolsRegistry = [
     accentColor: "#10b981",
     tags: ["minecraft", "whitelist", "commands", "server admin"],
     isPopular: true,
-    relatedToolIds: ["minecraft-server-properties-generator", "minecraft-motd-generator", "minecraft-server-rules-generator", "minecraft-lfg-post-generator", "minecraft-whitelist-application-generator"],
+    relatedToolIds: ["minecraft-server-properties-generator", "minecraft-motd-generator", "minecraft-server-rules-generator", "minecraft-lfg-post-generator", "minecraft-whitelist-application-generator", "minecraft-command-generator"],
   },
   {
     id: "minecraft-whitelist-application-generator",
@@ -26,7 +26,7 @@ export const toolsRegistry = [
     image: "/images/tools/minecraft-whitelist-application.jpg",
     icon: "📝",
     accentColor: "#10b981",
-    relatedToolIds: ["minecraft-whitelist-command-generator", "minecraft-server-rules-generator", "minecraft-lfg-post-generator", "minecraft-motd-generator"],
+    relatedToolIds: ["minecraft-whitelist-command-generator", "minecraft-server-rules-generator", "minecraft-lfg-post-generator", "minecraft-motd-generator", "minecraft-command-generator"],
   },
   {
     id: "minecraft-motd-generator",
@@ -40,7 +40,7 @@ export const toolsRegistry = [
     image: "/images/tools/minecraft-motd.jpg",
     icon: "\u{1F4DD}",
     accentColor: "#10b981",
-    relatedToolIds: ["minecraft-server-properties-generator", "minecraft-server-rules-generator", "minecraft-whitelist-command-generator", "minecraft-lfg-post-generator", "minecraft-whitelist-application-generator"],
+    relatedToolIds: ["minecraft-server-properties-generator", "minecraft-server-rules-generator", "minecraft-whitelist-command-generator", "minecraft-lfg-post-generator", "minecraft-whitelist-application-generator", "minecraft-command-generator"],
   },
   {
     id: "minecraft-server-rules-generator",
@@ -55,7 +55,7 @@ export const toolsRegistry = [
     accentColor: "#10b981",
     tags: ["minecraft", "rules", "server admin", "community"],
     isPopular: false,
-    relatedToolIds: ["minecraft-server-properties-generator", "minecraft-motd-generator", "minecraft-whitelist-command-generator", "minecraft-lfg-post-generator", "minecraft-whitelist-application-generator"],
+    relatedToolIds: ["minecraft-server-properties-generator", "minecraft-motd-generator", "minecraft-whitelist-command-generator", "minecraft-lfg-post-generator", "minecraft-whitelist-application-generator", "minecraft-command-generator"],
   },
   {
     id: "minecraft-server-properties-generator",
@@ -70,7 +70,28 @@ export const toolsRegistry = [
     accentColor: "#10b981",
     tags: ["minecraft", "server.properties", "server config", "smp", "whitelist", "java edition"],
     isPopular: true,
-    relatedToolIds: ["minecraft-motd-generator", "minecraft-server-rules-generator", "minecraft-whitelist-command-generator", "minecraft-lfg-post-generator", "minecraft-whitelist-application-generator"],
+    relatedToolIds: ["minecraft-motd-generator", "minecraft-server-rules-generator", "minecraft-whitelist-command-generator", "minecraft-lfg-post-generator", "minecraft-whitelist-application-generator", "minecraft-command-generator"],
+  },
+  {
+    id: "minecraft-command-generator",
+    category: "Minecraft",
+    title: "Minecraft Command Generator",
+    description:
+      "Generate common Minecraft commands for gamemode, teleport, give item, weather, time, difficulty, effects, gamerules, and server administration.",
+    path: "/tools/minecraft-command-generator",
+    status: "live",
+    image: "/images/tools/minecraft-command-generator.jpg",
+    icon: "\u{2328}\uFE0F",
+    accentColor: "#10b981",
+    tags: ["minecraft", "commands", "gamemode", "teleport", "give item", "gamerule", "server admin"],
+    isPopular: true,
+    relatedToolIds: [
+      "minecraft-whitelist-command-generator",
+      "minecraft-server-properties-generator",
+      "minecraft-motd-generator",
+      "minecraft-server-rules-generator",
+      "minecraft-whitelist-application-generator",
+    ],
   },
   {
     id: "minecraft-lfg-post-generator",

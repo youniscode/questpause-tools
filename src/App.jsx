@@ -8,6 +8,7 @@ import MinecraftLfgPostGenerator from "./pages/tools/minecraft/MinecraftLfgPostG
 import MinecraftMOTDGenerator from "./pages/tools/minecraft/MinecraftMOTDGenerator.jsx";
 import MinecraftWhitelistApplicationGenerator from "./pages/tools/minecraft/MinecraftWhitelistApplicationGenerator.jsx";
 import MinecraftServerPropertiesGenerator from "./pages/tools/minecraft/MinecraftServerPropertiesGenerator.jsx";
+import MinecraftCommandGenerator from "./pages/tools/minecraft/MinecraftCommandGenerator.jsx";
 import DiscordAnnouncementGenerator from "./pages/tools/discord/DiscordAnnouncementGenerator.jsx";
 import DiscordRulesGenerator from "./pages/tools/discord/DiscordRulesGenerator.jsx";
 import DiscordWelcomeMessageGenerator from "./pages/tools/discord/DiscordWelcomeMessageGenerator.jsx";
@@ -22,6 +23,7 @@ import ProjectZomboidServerSettingsHelper from "./pages/tools/project-zomboid/Pr
 import ProjectZomboidSafehouseRulesGenerator from "./pages/tools/project-zomboid/ProjectZomboidSafehouseRulesGenerator.jsx";
 import ICARUSServerRulesGenerator from "./pages/tools/icarus/ICARUSServerRulesGenerator.jsx";
 import SevenDaysToDieServerRulesGenerator from "./pages/tools/7-days-to-die/SevenDaysToDieServerRulesGenerator.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy.jsx"));
 const TermsOfUse = lazy(() => import("./pages/legal/TermsOfUse.jsx"));
 
@@ -59,6 +61,10 @@ export default function App() {
         <Route
           path="/tools/minecraft-server-properties-generator"
           element={<MinecraftServerPropertiesGenerator />}
+        />
+        <Route
+          path="/tools/minecraft-command-generator"
+          element={<MinecraftCommandGenerator />}
         />
         <Route
           path="/tools/discord-announcement-generator"
@@ -114,6 +120,7 @@ export default function App() {
         />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
   );

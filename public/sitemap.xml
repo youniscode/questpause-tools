@@ -29,6 +29,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tools.jonascode.com/tools/minecraft-command-generator</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://tools.jonascode.com/tools/minecraft-motd-generator</loc>
     <priority>0.8</priority>
   </url>
