@@ -18,6 +18,49 @@ export function upsertMeta(selector, attrName, content) {
     el.setAttribute(attrName, content);
 }
 
+function removeJsonLd() {
+    const existing = document.head.querySelector('script[type="application/ld+json"]');
+    if (existing) existing.remove();
+}
+
+function addJsonLd(data) {
+    removeJsonLd();
+    if (!data) return;
+    const script = document.createElement("script");
+    script.setAttribute("type", "application/ld+json");
+    script.textContent = JSON.stringify(data);
+    document.head.appendChild(script);
+}
+
+function buildToolJsonLd(seo) {
+    const url = `${location.origin}${location.pathname}`;
+    return {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name: seo.title,
+        description: seo.description,
+        url,
+        applicationCategory: "UtilityApplication",
+        operatingSystem: "Web browser",
+        offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+        },
+    };
+}
+
+function buildCollectionJsonLd(seo) {
+    const url = `${location.origin}${location.pathname}`;
+    return {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: seo.title,
+        description: seo.description,
+        url,
+    };
+}
+
 export function setSEO(seo, lang) {
     if (!seo) return;
     document.title = seo.title;
@@ -43,4 +86,12 @@ export function setSEO(seo, lang) {
         document.head.appendChild(link);
     }
     link.setAttribute("href", `${location.origin}${location.pathname}`);
+
+    // Auto-generate structured data based on URL pattern
+    const path = location.pathname;
+    if (path.startsWith("/tools/") && path !== "/tools") {
+        addJsonLd(buildToolJsonLd(seo));
+    } else if (path === "/tools") {
+        addJsonLd(buildCollectionJsonLd(seo));
+    }
 }
