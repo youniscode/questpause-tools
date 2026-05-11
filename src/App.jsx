@@ -9,6 +9,7 @@ import MinecraftMOTDGenerator from "./pages/tools/minecraft/MinecraftMOTDGenerat
 import MinecraftWhitelistApplicationGenerator from "./pages/tools/minecraft/MinecraftWhitelistApplicationGenerator.jsx";
 import MinecraftServerPropertiesGenerator from "./pages/tools/minecraft/MinecraftServerPropertiesGenerator.jsx";
 import DiscordAnnouncementGenerator from "./pages/tools/discord/DiscordAnnouncementGenerator.jsx";
+import DiscordRulesGenerator from "./pages/tools/discord/DiscordRulesGenerator.jsx";
 import ServerMaintenanceMessageGenerator from "./pages/tools/server-admin/ServerMaintenanceMessageGenerator.jsx";
 import ProjectZomboidModListFormatter from "./pages/tools/project-zomboid/ProjectZomboidModListFormatter.jsx";
 import ProjectZomboidAdminMessageGenerator from "./pages/tools/project-zomboid/ProjectZomboidAdminMessageGenerator.jsx";
@@ -32,6 +33,10 @@ export default function App() {
         <Route
           path="/tools/minecraft-whitelist-application-generator"
           element={<MinecraftWhitelistApplicationGenerator />}
+        />
+        <Route
+          path="/tools/discord-rules-generator"
+          element={<DiscordRulesGenerator />}
         />
         <Route
           path="/tools/minecraft-server-rules-generator"

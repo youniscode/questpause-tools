@@ -17,6 +17,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tools.jonascode.com/tools/discord-rules-generator</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://tools.jonascode.com/tools/minecraft-server-rules-generator</loc>
     <priority>0.8</priority>
   </url>
