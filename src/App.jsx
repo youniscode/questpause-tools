@@ -5,6 +5,7 @@ import ToolsIndex from "./pages/tools/ToolsIndex.jsx";
 import MinecraftWhitelistCommandGenerator from "./pages/tools/minecraft/MinecraftWhitelistCommandGenerator.jsx";
 import MinecraftServerRulesGenerator from "./pages/tools/minecraft/MinecraftServerRulesGenerator.jsx";
 import MinecraftLfgPostGenerator from "./pages/tools/minecraft/MinecraftLfgPostGenerator.jsx";
+import MinecraftMOTDGenerator from "./pages/tools/minecraft/MinecraftMOTDGenerator.jsx";
 import DiscordAnnouncementGenerator from "./pages/tools/discord/DiscordAnnouncementGenerator.jsx";
 import ServerMaintenanceMessageGenerator from "./pages/tools/server-admin/ServerMaintenanceMessageGenerator.jsx";
 import ProjectZomboidModListFormatter from "./pages/tools/project-zomboid/ProjectZomboidModListFormatter.jsx";
@@ -33,6 +34,10 @@ export default function App() {
         <Route
           path="/tools/minecraft-lfg-post-generator"
           element={<MinecraftLfgPostGenerator />}
+        />
+        <Route
+          path="/tools/minecraft-motd-generator"
+          element={<MinecraftMOTDGenerator />}
         />
         <Route
           path="/tools/discord-announcement-generator"

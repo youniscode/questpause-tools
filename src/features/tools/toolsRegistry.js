@@ -12,7 +12,7 @@ export const toolsRegistry = [
     accentColor: "#10b981",
     tags: ["minecraft", "whitelist", "commands", "server admin"],
     isPopular: true,
-    relatedToolIds: ["minecraft-server-rules-generator", "minecraft-lfg-post-generator"],
+    relatedToolIds: ["minecraft-motd-generator", "minecraft-server-rules-generator", "minecraft-lfg-post-generator"],
   },
   {
     id: "minecraft-server-rules-generator",
@@ -27,7 +27,7 @@ export const toolsRegistry = [
     accentColor: "#10b981",
     tags: ["minecraft", "rules", "server admin", "community"],
     isPopular: false,
-    relatedToolIds: ["minecraft-whitelist-command-generator", "minecraft-lfg-post-generator"],
+    relatedToolIds: ["minecraft-motd-generator", "minecraft-whitelist-command-generator", "minecraft-lfg-post-generator"],
   },
   {
     id: "minecraft-lfg-post-generator",
@@ -42,7 +42,22 @@ export const toolsRegistry = [
     accentColor: "#10b981",
     tags: ["minecraft", "lfg", "recruitment", "community"],
     isPopular: false,
-    relatedToolIds: ["minecraft-whitelist-command-generator", "minecraft-server-rules-generator"],
+    relatedToolIds: ["minecraft-motd-generator", "minecraft-whitelist-command-generator", "minecraft-server-rules-generator"],
+  },
+  {
+    id: "minecraft-motd-generator",
+    category: "Minecraft",
+    title: "Minecraft MOTD Generator",
+    description:
+      "Generate Minecraft MOTDs, server descriptions, color-code friendly server list text, and Discord welcome messages.",
+    path: "/tools/minecraft-motd-generator",
+    status: "live",
+    image: "/images/tools/minecraft-motd.jpg",
+    icon: "\u{1F4AC}",
+    accentColor: "#10b981",
+    tags: ["minecraft", "motd", "server description", "color codes", "server list"],
+    isPopular: true,
+    relatedToolIds: ["minecraft-server-rules-generator", "minecraft-lfg-post-generator", "minecraft-whitelist-command-generator", "discord-announcement-generator"],
   },
   {
     id: "discord-announcement-generator",
