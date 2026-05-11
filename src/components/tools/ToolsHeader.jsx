@@ -69,16 +69,6 @@ function ToolsHeader() {
               </a>
             ))}
           </nav>
-
-          <a
-            href="https://jonascode.com"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-xl border border-slate-700 px-3 py-1.5 text-xs font-medium text-slate-300 hover:border-amber-500/50 hover:text-amber-400 transition-all shrink-0"
-          >
-            &larr; <span className="hidden sm:inline">Main Site</span>
-            <span className="sm:hidden">Home</span>
-          </a>
         </div>
 
         <nav className="md:hidden flex mt-2 gap-1 overflow-x-auto scrollbar-none -mx-4 px-4 pb-1">

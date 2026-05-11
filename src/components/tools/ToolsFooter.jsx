@@ -35,16 +35,7 @@ function ToolsFooter() {
           >
             Terms
           </Link>
-          <span className="text-slate-700 text-[10px] sm:text-xs hidden xs:inline">|</span>
-          <span className="text-slate-600 text-[10px] sm:text-xs sm:hidden">·</span>
-          <a
-            href="https://jonascode.com"
-            target="_blank"
-            rel="noreferrer"
-            className="hover:text-amber-400 hover:underline underline-offset-4 transition-colors whitespace-nowrap"
-          >
-            &larr; Main Site
-          </a>
+
         </div>
       </div>
     </footer>
