@@ -966,44 +966,6 @@ If you see something that breaks the rules, report it to staff through the appro
           </div>
         </section>
 
-        <section className="border-b border-slate-800/80">
-          <div className="mx-auto max-w-2xl px-4 py-12">
-            <h2 className="text-xl font-semibold text-white">
-              Related Tools
-            </h2>
-            <p className="mt-4 text-sm leading-6 text-slate-400">
-              If you are managing a Discord community, these related tools can help you
-              communicate with your members:
-            </p>
-            <ul className="mt-4 flex flex-col gap-2 text-sm leading-6 text-slate-300 list-disc pl-5">
-              <li>
-                <a href="/tools/discord-announcement-generator" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">
-                  Discord Announcement Generator
-                </a>{" "}
-                — Create polished announcements for your community.
-              </li>
-              <li>
-                <a href="/tools/server-maintenance-message-generator" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">
-                  Server Maintenance Message Generator
-                </a>{" "}
-                — Write downtime and restart notices.
-              </li>
-              <li>
-                <a href="/tools/minecraft-server-rules-generator" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">
-                  Minecraft Server Rules Generator
-                </a>{" "}
-                — Generate in-game rules for Minecraft servers.
-              </li>
-              <li>
-                <a href="/tools/valheim-server-rules-generator" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">
-                  Valheim Server Rules Generator
-                </a>{" "}
-                — Create rules for Valheim co-op and modded servers.
-              </li>
-            </ul>
-          </div>
-        </section>
-
         <RelatedTools currentToolId="discord-rules-generator" />
 
         <ToolsFooter />

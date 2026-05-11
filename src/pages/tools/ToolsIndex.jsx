@@ -35,6 +35,8 @@ const CATEGORY_DESCRIPTIONS = {
   "Server Admin": "General server operations tools for maintenance notices, restart warnings, and downtime updates.",
   "Project Zomboid": "Configuration tools for Project Zomboid dedicated servers, mod lists, and servertest.ini settings.",
   Valheim: "Administration tools for Valheim co-op realms, modded servers, progression control, and Viking communities.",
+  ICARUS: "Rules and server management tools for ICARUS co-op survival worlds, persistent prospects, and long-term outpost communities.",
+  "7 Days to Die": "Server rules, configuration, and community management tools for 7 Days to Die PvE, PvP, and apocalypse servers.",
 };
 
 const POPULAR_USE_CASES = [

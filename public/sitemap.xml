@@ -41,6 +41,10 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tools.jonascode.com/tools/discord-welcome-message-generator</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://tools.jonascode.com/tools/server-maintenance-message-generator</loc>
     <priority>0.8</priority>
   </url>
@@ -61,11 +65,27 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://tools.jonascode.com/tools/project-zomboid-safehouse-rules-generator</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://tools.jonascode.com/tools/valheim-server-rules-generator</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.jonascode.com/tools/valheim-admin-command-helper</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.jonascode.com/tools/valheim-event-announcement-generator</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.jonascode.com/tools/icarus-server-rules-generator</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.jonascode.com/tools/7-days-to-die-server-rules-generator</loc>
     <priority>0.8</priority>
   </url>
   <url>

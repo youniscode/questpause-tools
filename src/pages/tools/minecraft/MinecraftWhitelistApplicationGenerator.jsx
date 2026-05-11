@@ -913,44 +913,6 @@ Please fill out this application to be considered for our Small Survival SMP.
           </div>
         </section>
 
-        <section className="border-b border-slate-800/80">
-          <div className="mx-auto max-w-2xl px-4 py-12">
-            <h2 className="text-xl font-semibold text-white">
-              Related Tools
-            </h2>
-            <p className="mt-4 text-sm leading-6 text-slate-400">
-              If you are setting up a whitelist server, these related tools can help you
-              manage the rest of your server setup:
-            </p>
-            <ul className="mt-4 flex flex-col gap-2 text-sm leading-6 text-slate-300 list-disc pl-5">
-              <li>
-                <a href="/tools/minecraft-whitelist-command-generator" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">
-                  Minecraft Whitelist Command Generator
-                </a>{" "}
-                — Generate whitelist, op, ban, and kick commands.
-              </li>
-              <li>
-                <a href="/tools/minecraft-server-rules-generator" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">
-                  Minecraft Server Rules Generator
-                </a>{" "}
-                — Create clear server rules for your community.
-              </li>
-              <li>
-                <a href="/tools/minecraft-lfg-post-generator" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">
-                  Minecraft LFG Post Generator
-                </a>{" "}
-                — Write player recruitment posts for Reddit and Discord.
-              </li>
-              <li>
-                <a href="/tools/minecraft-motd-generator" className="text-indigo-400 hover:text-indigo-300 underline underline-offset-2">
-                  Minecraft MOTD Generator
-                </a>{" "}
-                — Create a server MOTD and server list description.
-              </li>
-            </ul>
-          </div>
-        </section>
-
         <RelatedTools currentToolId="minecraft-whitelist-application-generator" />
 
         <ToolsFooter />

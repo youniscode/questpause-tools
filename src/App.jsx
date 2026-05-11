@@ -10,13 +10,18 @@ import MinecraftWhitelistApplicationGenerator from "./pages/tools/minecraft/Mine
 import MinecraftServerPropertiesGenerator from "./pages/tools/minecraft/MinecraftServerPropertiesGenerator.jsx";
 import DiscordAnnouncementGenerator from "./pages/tools/discord/DiscordAnnouncementGenerator.jsx";
 import DiscordRulesGenerator from "./pages/tools/discord/DiscordRulesGenerator.jsx";
+import DiscordWelcomeMessageGenerator from "./pages/tools/discord/DiscordWelcomeMessageGenerator.jsx";
 import ServerMaintenanceMessageGenerator from "./pages/tools/server-admin/ServerMaintenanceMessageGenerator.jsx";
 import ServerStatusMessageGenerator from "./pages/tools/server-admin/ServerStatusMessageGenerator.jsx";
 import ProjectZomboidModListFormatter from "./pages/tools/project-zomboid/ProjectZomboidModListFormatter.jsx";
 import ProjectZomboidAdminMessageGenerator from "./pages/tools/project-zomboid/ProjectZomboidAdminMessageGenerator.jsx";
 import ValheimAdminCommandHelper from "./pages/tools/valheim/ValheimAdminCommandHelper.jsx";
 import ValheimServerRulesGenerator from "./pages/tools/valheim/ValheimServerRulesGenerator.jsx";
+import ValheimEventAnnouncementGenerator from "./pages/tools/valheim/ValheimEventAnnouncementGenerator.jsx";
 import ProjectZomboidServerSettingsHelper from "./pages/tools/project-zomboid/ProjectZomboidServerSettingsHelper.jsx";
+import ProjectZomboidSafehouseRulesGenerator from "./pages/tools/project-zomboid/ProjectZomboidSafehouseRulesGenerator.jsx";
+import ICARUSServerRulesGenerator from "./pages/tools/icarus/ICARUSServerRulesGenerator.jsx";
+import SevenDaysToDieServerRulesGenerator from "./pages/tools/7-days-to-die/SevenDaysToDieServerRulesGenerator.jsx";
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy.jsx"));
 const TermsOfUse = lazy(() => import("./pages/legal/TermsOfUse.jsx"));
 
@@ -60,6 +65,10 @@ export default function App() {
           element={<DiscordAnnouncementGenerator />}
         />
         <Route
+          path="/tools/discord-welcome-message-generator"
+          element={<DiscordWelcomeMessageGenerator />}
+        />
+        <Route
           path="/tools/server-maintenance-message-generator"
           element={<ServerMaintenanceMessageGenerator />}
         />
@@ -84,8 +93,24 @@ export default function App() {
           element={<ValheimAdminCommandHelper />}
         />
         <Route
+          path="/tools/valheim-event-announcement-generator"
+          element={<ValheimEventAnnouncementGenerator />}
+        />
+        <Route
           path="/tools/project-zomboid-server-settings-helper"
           element={<ProjectZomboidServerSettingsHelper />}
+        />
+        <Route
+          path="/tools/project-zomboid-safehouse-rules-generator"
+          element={<ProjectZomboidSafehouseRulesGenerator />}
+        />
+        <Route
+          path="/tools/icarus-server-rules-generator"
+          element={<ICARUSServerRulesGenerator />}
+        />
+        <Route
+          path="/tools/7-days-to-die-server-rules-generator"
+          element={<SevenDaysToDieServerRulesGenerator />}
         />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />

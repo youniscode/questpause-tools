@@ -8,6 +8,8 @@ const TOOLS_NAV = [
   { id: "server-admin", label: "Server Admin", href: "/tools#server-admin-tools" },
   { id: "project-zomboid", label: "Project Zomboid", href: "/tools#project-zomboid-tools" },
   { id: "valheim", label: "Valheim", href: "/tools#valheim-tools" },
+  { id: "icarus", label: "ICARUS", href: "/tools#icarus-tools" },
+  { id: "7-days-to-die", label: "7 Days to Die", href: "/tools#7-days-to-die-tools" },
 ];
 
 function useActiveHash() {
