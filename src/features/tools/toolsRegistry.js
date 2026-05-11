@@ -83,6 +83,21 @@ export const toolsRegistry = [
     ],
   },
   {
+    id: "project-zomboid-admin-message-generator",
+    category: "Project Zomboid",
+    title: "Project Zomboid Admin Message Generator",
+    description:
+      "Generate restart warnings, maintenance notices, rule reminders, whitelist messages, and community announcements for Project Zomboid servers.",
+    path: "/tools/project-zomboid-admin-message-generator",
+    status: "live",
+    image: "/images/tools/project-zomboid-admin-messages.jpg",
+    icon: "\u{1F9DF}",
+    accentColor: "#e11d48",
+    tags: ["project zomboid", "admin messages", "restart warning", "maintenance", "server admin", "community"],
+    isPopular: false,
+    relatedToolIds: ["project-zomboid-server-settings-helper", "project-zomboid-mod-list-formatter", "server-maintenance-message-generator", "discord-announcement-generator"],
+  },
+  {
     id: "project-zomboid-mod-list-formatter",
     category: "Project Zomboid",
     title: "Project Zomboid Mod List Formatter",
@@ -115,6 +130,7 @@ export const toolsRegistry = [
     tags: ["project zomboid", "server settings", "servertest.ini", "admin"],
     isPopular: true,
     relatedToolIds: [
+      "project-zomboid-admin-message-generator",
       "project-zomboid-mod-list-formatter",
       "server-maintenance-message-generator",
       "minecraft-server-rules-generator",

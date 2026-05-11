@@ -8,6 +8,7 @@ import MinecraftLfgPostGenerator from "./pages/tools/minecraft/MinecraftLfgPostG
 import DiscordAnnouncementGenerator from "./pages/tools/discord/DiscordAnnouncementGenerator.jsx";
 import ServerMaintenanceMessageGenerator from "./pages/tools/server-admin/ServerMaintenanceMessageGenerator.jsx";
 import ProjectZomboidModListFormatter from "./pages/tools/project-zomboid/ProjectZomboidModListFormatter.jsx";
+import ProjectZomboidAdminMessageGenerator from "./pages/tools/project-zomboid/ProjectZomboidAdminMessageGenerator.jsx";
 import ValheimAdminCommandHelper from "./pages/tools/valheim/ValheimAdminCommandHelper.jsx";
 import ValheimServerRulesGenerator from "./pages/tools/valheim/ValheimServerRulesGenerator.jsx";
 import ProjectZomboidServerSettingsHelper from "./pages/tools/project-zomboid/ProjectZomboidServerSettingsHelper.jsx";
@@ -40,6 +41,10 @@ export default function App() {
         <Route
           path="/tools/server-maintenance-message-generator"
           element={<ServerMaintenanceMessageGenerator />}
+        />
+        <Route
+          path="/tools/project-zomboid-admin-message-generator"
+          element={<ProjectZomboidAdminMessageGenerator />}
         />
         <Route
           path="/tools/project-zomboid-mod-list-formatter"
