@@ -11,6 +11,7 @@ import MinecraftServerPropertiesGenerator from "./pages/tools/minecraft/Minecraf
 import DiscordAnnouncementGenerator from "./pages/tools/discord/DiscordAnnouncementGenerator.jsx";
 import DiscordRulesGenerator from "./pages/tools/discord/DiscordRulesGenerator.jsx";
 import ServerMaintenanceMessageGenerator from "./pages/tools/server-admin/ServerMaintenanceMessageGenerator.jsx";
+import ServerStatusMessageGenerator from "./pages/tools/server-admin/ServerStatusMessageGenerator.jsx";
 import ProjectZomboidModListFormatter from "./pages/tools/project-zomboid/ProjectZomboidModListFormatter.jsx";
 import ProjectZomboidAdminMessageGenerator from "./pages/tools/project-zomboid/ProjectZomboidAdminMessageGenerator.jsx";
 import ValheimAdminCommandHelper from "./pages/tools/valheim/ValheimAdminCommandHelper.jsx";
@@ -61,6 +62,10 @@ export default function App() {
         <Route
           path="/tools/server-maintenance-message-generator"
           element={<ServerMaintenanceMessageGenerator />}
+        />
+        <Route
+          path="/tools/server-status-message-generator"
+          element={<ServerStatusMessageGenerator />}
         />
         <Route
           path="/tools/project-zomboid-admin-message-generator"
