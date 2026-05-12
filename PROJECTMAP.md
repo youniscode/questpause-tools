@@ -314,6 +314,7 @@ Update this table weekly during the pre-AdSense monitoring period.
 | Date | Sitemap Status | Indexed Pages | Discovered / Crawled Not Indexed | Errors | Impressions | Notes |
 |---|---:|---:|---:|---|---:|---|
 | 2026-05-11 | To check | To check | To check | To check | To check | Initial monitoring period after monetization-readiness pass. |
+| 2026-05-12 | Success | Processing | Processing | None visible | 0 | Sitemap processed successfully with 27 discovered pages. Pages report still processing. Performance shows 0 clicks and 0 impressions during first 24h. Status: Green — wait and monitor. |
 
 ## Backlog: Next Suggested Tools
 - (none currently suggested)
@@ -415,3 +416,5 @@ Next recommended step:
 | 2026-05-11 | Added Search Console monitoring plan, CMP/consent plan, and AdSense readiness checklist to PROJECTMAP.md | None (documentation only) | Passed (npm run build) |
 | 2026-05-11 | Added Search Console Monitoring Log table to PROJECTMAP.md | None (documentation only) | Passed (npm run build) |
 | 2026-05-12 | Full QA test pass: 28 routes verified HTTP 200, sitemap.xml validated (26 public URLs), robots.txt correct, header/footer/seo/ads/backlinks/mobile all passed, TEST_REPORT.md created | None (documentation only — TEST_REPORT.md) | Passed (npm run build) |
+| 2026-05-12 | Search Console readiness test pass: 30 production routes HTTP 200, sitemap/robots validated against prod, SEO/indexability/ads checked, SEARCH_CONSOLE_REPORT.md created | None (documentation only — SEARCH_CONSOLE_REPORT.md) | Passed (npm run build) |
+| 2026-05-12 | Updated Search Console Monitoring Log with first manual Search Console values: sitemap success, 27 discovered pages, pages report processing, 0 impressions/clicks | None (documentation only — PROJECTMAP.md) | Not run (documentation-only update) |
