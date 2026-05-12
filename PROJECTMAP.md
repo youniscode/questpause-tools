@@ -238,13 +238,85 @@ All located in `src/components/tools/`:
 - No fake ad content visible to users
 - No analytics script loaded (privacy-friendly analytics may be added as separate step)
 
-## Shared Components
+## Current Known Issues
 - Build: Main JS chunk > 500 kB warning (pre-existing, non-blocking)
+- ESLint: Needs migration to v9 flat config format (pre-existing, `.eslintrc.*` incompatible)
 - All other audit checks passed (route-to-registry parity, sitemap completeness, SEO title uniqueness, internal link validity, no jonascode.com backlinks)
+
+## QA Test Report
+- **File:** `TEST_REPORT.md`
+- **Date:** 2026-05-12
+- **Result:** All tests passed — 28/28 routes HTTP 200, sitemap, robots.txt, SEO, header/footer, ads/analytics, backlinks, mobile all verified
+- **Recommendation:** Ready for deployment
+
+## Search Console Monitoring Plan
+
+### What to Monitor
+- `/tools` (index/hub), `sitemap.xml`, `robots.txt`, `/about`, `/privacy-policy`, and top tool pages (by impressions)
+
+### Regular Checks
+- **Pages report:** Weekly — check for indexing issues, coverage drops, and new page discovery
+- **Sitemaps report:** After each release — confirm new URLs are listed and submitted
+- **Performance report:** Monitor impressions, clicks, and average position for key queries
+
+### Indexing Requests
+- Do not request indexing repeatedly for every small page change
+- Request indexing for: `/tools`, important new pages (new tool routes, `/about`), and pages with major content fixes or structural changes
+
+### Watch For
+- `Discovered - currently not indexed`
+- `Crawled - currently not indexed`
+- `Not found (404)`
+- `Duplicate without user-selected canonical`
+- `Blocked by robots.txt`
+- `Page with redirect`
+
+### Current Sitemap
+- `https://tools.jonascode.com/sitemap.xml`
+
+## CMP and Consent Plan
+
+### Current Status
+- No ads, no analytics, no CMP active
+- No CMP is required while no ads or analytics are active
+
+### Pre-AdSense Requirements
+- Before AdSense goes live, choose a Google-certified CMP **or** use Google AdSense Privacy & Messaging (if available in the region)
+- For EEA/UK/Switzerland users, consent must be handled before personalized ads are served
+- Do not load the AdSense script before CMP or consent setup is ready
+- Do not use a random cookie banner that is not compatible with Google CMP requirements
+- Privacy Policy must stay updated before ads are enabled
+- Store the final CMP decision in PROJECTMAP.md before implementation
+
+## AdSense Readiness Gate
+
+Checklist (all items must be complete before AdSense goes live):
+- [ ] Search Console verified
+- [ ] Sitemap submitted successfully
+- [ ] Key pages indexed or discovered
+- [ ] Privacy Policy updated (with ad/cookie/consent disclosure)
+- [ ] Terms of Use updated (with tool responsibilities, affiliation disclaimer)
+- [ ] About page live
+- [ ] Contact page live
+- [ ] Independent disclaimer visible in footer
+- [ ] No jonascode.com backlinks
+- [ ] No fake ads visible
+- [ ] CMP decision made
+- [ ] Consent solution implemented
+- [ ] Ad placement plan reviewed
+- [ ] No ads near buttons, copy controls, or generated outputs
+- [ ] AdSense account / site approval complete
+
+## Search Console Monitoring Log
+
+Update this table weekly during the pre-AdSense monitoring period.
+
+| Date | Sitemap Status | Indexed Pages | Discovered / Crawled Not Indexed | Errors | Impressions | Notes |
+|---|---:|---:|---:|---|---:|---|
+| 2026-05-11 | To check | To check | To check | To check | To check | Initial monitoring period after monetization-readiness pass. |
 
 ## Backlog: Next Suggested Tools
 - (none currently suggested)
-
 
 ## New Tool Checklist
 
@@ -340,3 +412,6 @@ Next recommended step:
 | 2026-05-11 | Added branded 404 catch-all route | `*` (catch-all) | Passed (npm run build) |
 | 2026-05-11 | Added Minecraft Command Generator | `/tools/minecraft-command-generator` | Passed (npm run build) |
 | 2026-05-11 | AdSense preparation: added /about, /contact, updated Privacy/Terms, footer disclaimer, AdSlotPlaceholder, Monetization Plan | `/about`, `/contact` | Passed (npm run build) |
+| 2026-05-11 | Added Search Console monitoring plan, CMP/consent plan, and AdSense readiness checklist to PROJECTMAP.md | None (documentation only) | Passed (npm run build) |
+| 2026-05-11 | Added Search Console Monitoring Log table to PROJECTMAP.md | None (documentation only) | Passed (npm run build) |
+| 2026-05-12 | Full QA test pass: 28 routes verified HTTP 200, sitemap.xml validated (26 public URLs), robots.txt correct, header/footer/seo/ads/backlinks/mobile all passed, TEST_REPORT.md created | None (documentation only — TEST_REPORT.md) | Passed (npm run build) |
