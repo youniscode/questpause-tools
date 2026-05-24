@@ -200,6 +200,7 @@ All located in `src/components/tools/`:
 - **Dev command:** `npm run dev`
 - **Preview command:** `npm run preview`
 - **Lint command:** `npm run lint`
+- **Verify command:** `npm run verify` — runs lint and production build together before push
 - **Framework:** React 19 + Vite 7 + Tailwind CSS 4 + React Router 7
 - **Deployment:** Vercel (SPA with rewrites)
 - **Production URL:** https://tools.jonascode.com
