@@ -239,7 +239,7 @@ All located in `src/components/tools/`:
 - No analytics script loaded (privacy-friendly analytics may be added as separate step)
 
 ## Current Known Issues
-- Build: Main JS chunk > 500 kB warning (pre-existing, non-blocking)
+- Build: Tool routes are lazy-loaded. Main JS bundle reduced from ~821 kB to ~239 kB and the previous >500 kB warning is resolved.
 - ESLint: Needs migration to v9 flat config format (pre-existing, `.eslintrc.*` incompatible)
 - All other audit checks passed (route-to-registry parity, sitemap completeness, SEO title uniqueness, internal link validity, no jonascode.com backlinks)
 
