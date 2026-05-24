@@ -52,6 +52,7 @@ function toneIntro(tone, typeLabel) {
 function toneBody(tone, typeId, gameLabel) {
   const game = gameLabel || "server";
 
+
   switch (typeId) {
     case "planned":
       return `${game} will be down for scheduled maintenance. We will use this time to apply updates and improve performance.`;
@@ -94,7 +95,6 @@ function toneClosing(tone, typeId) {
 
 function countdownMessages(name, gameLabel, typeLabel, includeEmojis) {
   const emoji = includeEmojis ? emojify("planned") + " " : "";
-  const game = gameLabel || "server";
   const nameStr = name || "our server";
   const times = [15, 10, 5, 1];
   return times.map((min) =>
@@ -106,7 +106,6 @@ export function generateMaintenanceMessage({
   serverName,
   game,
   messageType,
-  platform,
   tone,
   maintenanceTime,
   estimatedDowntime,

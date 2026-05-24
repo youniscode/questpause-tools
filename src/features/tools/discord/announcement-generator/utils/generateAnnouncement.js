@@ -111,7 +111,6 @@ export function generateAnnouncement({
   const gameLabel = GAME_LABELS[game] || "community";
   const includeEmojis = selectedToggles.includes("emojis");
   const includeRoleMention = selectedToggles.includes("role-mention");
-  const includeShort = selectedToggles.includes("short-version");
   const includeCta = selectedToggles.includes("call-to-action");
   const includeThankYou = selectedToggles.includes("thank-you");
 

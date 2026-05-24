@@ -191,7 +191,6 @@ function getToneMsg(eventType, tone) {
 
 function generateAnnouncement(serverName, eventType, tone, formatType, toggles, dateTime, location, gear, bossBiome, bringItems, discordChannel, extraNote) {
   const name = serverName.trim() || "our Valheim server";
-  const typeLabel = EVENT_TYPES.find((t) => t.id === eventType)?.label || "Event";
   const title = EVENT_TITLES[eventType] || "Valheim Event";
   const opening = TONE_OPENINGS[tone] || TONE_OPENINGS.friendly;
   const closing = TONE_CLOSINGS[tone] || TONE_CLOSINGS.friendly;

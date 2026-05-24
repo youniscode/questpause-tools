@@ -1,4 +1,4 @@
-export function generateSettings(values, guidance) {
+export function generateSettings(values) {
   const lines = [];
   const boolKeys = [
     "Public",

@@ -142,7 +142,6 @@ function MinecraftCommandGenerator() {
   }, []);
 
   const prefix = commandMode === "ingame" ? "/" : "";
-  const target = playerTarget.trim() || "@p";
 
   const handleCopy = useCallback(async (text, label) => {
     try {
@@ -245,7 +244,7 @@ function MinecraftCommandGenerator() {
       slashVersion,
       explanation,
     });
-  }, [category, playerTarget, commandMode, gamemodeMode, teleportTarget, teleportDestination, teleportX, teleportY, teleportZ, giveTarget, giveItemId, giveAmount, weatherType, weatherDuration, timeType, timeTicks, difficultyLevel, effectTarget, effectId, effectDuration, effectAmplifier, effectHideParticles, prefix]);
+  }, [category, playerTarget, gamemodeMode, teleportTarget, teleportDestination, teleportX, teleportY, teleportZ, giveTarget, giveItemId, giveAmount, weatherType, weatherDuration, timeType, timeTicks, difficultyLevel, effectTarget, effectId, effectDuration, effectAmplifier, effectHideParticles, prefix]);
 
   const handleClear = useCallback(() => {
     setPlayerTarget("");

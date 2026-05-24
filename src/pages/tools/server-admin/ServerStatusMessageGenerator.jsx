@@ -231,7 +231,7 @@ function generateShortStatus(serverName, statusId, tone, toggles, optional) {
   return parts.join(" | ");
 }
 
-function generateInGameVersion(serverName, statusId, tone, toggles, optional) {
+function generateInGameVersion(serverName, statusId, tone, toggles) {
   const parts = [];
 
   const statusLabel = STATUS_TYPES.find((s) => s.id === statusId)?.label || "Status Update";
