@@ -200,7 +200,8 @@ All located in `src/components/tools/`:
 - **Dev command:** `npm run dev`
 - **Preview command:** `npm run preview`
 - **Lint command:** `npm run lint`
-- **Verify command:** `npm run verify` — runs lint and production build together before push
+- **Verify command:** `npm run verify` — runs lint, route audit, and production build together before push
+- **Route audit command:** `npm run audit:routes` — validates live tools against routes, sitemap entries, registry fields, duplicate IDs, duplicate paths, and related tool IDs
 - **Release checklist:** `docs/RELEASE_CHECKLIST.md` — standard checklist for routes, registry, sitemap, SEO, verification, and release steps
 - **Framework:** React 19 + Vite 7 + Tailwind CSS 4 + React Router 7
 - **Deployment:** Vercel (SPA with rewrites)

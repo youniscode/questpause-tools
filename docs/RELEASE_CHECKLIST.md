@@ -103,7 +103,11 @@ Before every commit or push, run:
 
 npm run verify
 
-This runs lint and production build together.
+For route, registry, sitemap, and related-tool checks only, run:
+
+npm run audit:routes
+
+This runs lint, route audit, and production build together.
 
 Both must pass before pushing.
 
