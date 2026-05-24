@@ -240,7 +240,7 @@ All located in `src/components/tools/`:
 
 ## Current Known Issues
 - Build: Tool routes are lazy-loaded. Main JS bundle reduced from ~821 kB to ~239 kB and the previous >500 kB warning is resolved.
-- ESLint: Needs migration to v9 flat config format (pre-existing, `.eslintrc.*` incompatible)
+- ESLint: v9 flat config added and `npm run lint` passes cleanly.
 - All other audit checks passed (route-to-registry parity, sitemap completeness, SEO title uniqueness, internal link validity, no jonascode.com backlinks)
 
 ## QA Test Report
