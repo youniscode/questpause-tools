@@ -146,6 +146,28 @@ function ToolsIndex() {
           onCategoryChange={setActiveCategory}
         />
 
+        {/* Top CTA banner */}
+        {activeCategory === "All" && !search && (
+          <section className="border-b border-slate-800/80">
+            <div className="mx-auto max-w-5xl px-4 py-6 sm:py-8">
+              <div className="rounded-2xl border border-amber-500/20 bg-amber-500/[0.03] p-5 sm:p-6 text-center">
+                <p className="text-sm sm:text-base font-semibold text-white">
+                  Need help setting this up for your Discord or game server?
+                </p>
+                <p className="mt-1.5 text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
+                  I can help you organize your Discord, roles, channels, onboarding, support flow, and basic server admin systems.
+                </p>
+                <Link
+                  to="/services/game-server-admin"
+                  className="mt-3 inline-flex items-center justify-center rounded-xl bg-amber-500 px-5 py-2.5 text-sm font-semibold text-slate-950 hover:bg-amber-400 transition-colors"
+                >
+                  Get setup help
+                </Link>
+              </div>
+            </div>
+          </section>
+        )}
+
         {showPopular && <PopularTools tools={popularTools} />}
 
         {filtered.length === 0 ? (
@@ -320,6 +342,38 @@ function ToolsIndex() {
                         </p>
                       </div>
                     ))}
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Support */}
+            {activeCategory === "All" && !search && (
+              <section className="border-b border-slate-800/80">
+                <div className="mx-auto max-w-5xl px-4 py-8 sm:py-12">
+                  <div className="rounded-2xl border border-slate-800 bg-slate-900/55 p-6 text-center">
+                    <h2 className="text-base sm:text-lg font-semibold text-white">
+                      Support QUESTPAUSE Tools
+                    </h2>
+                    <p className="mt-1.5 text-xs sm:text-sm text-slate-400 max-w-lg mx-auto">
+                      These tools are free. If they helped you, you can support future updates.
+                    </p>
+                    <div className="mt-4 flex items-center justify-center gap-3 flex-wrap">
+                      <a
+                        href="PAYPAL_LINK_PLACEHOLDER"
+                        className="inline-flex items-center justify-center rounded-xl border border-slate-700 bg-slate-800/60 px-5 py-2.5 text-sm font-semibold text-slate-300 hover:border-amber-500/30 hover:text-amber-300 transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Support with PayPal
+                      </a>
+                      <Link
+                        to="/services/game-server-admin"
+                        className="inline-flex items-center justify-center rounded-xl bg-amber-500 px-5 py-2.5 text-sm font-semibold text-slate-950 hover:bg-amber-400 transition-colors"
+                      >
+                        Contact for custom setup
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </section>

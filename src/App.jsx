@@ -1,31 +1,84 @@
 import { lazy, Suspense } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import ScrollToHash from "./components/ScrollToHash.jsx";
-import ToolsIndex from "./pages/tools/ToolsIndex.jsx";
-import MinecraftWhitelistCommandGenerator from "./pages/tools/minecraft/MinecraftWhitelistCommandGenerator.jsx";
-import MinecraftServerRulesGenerator from "./pages/tools/minecraft/MinecraftServerRulesGenerator.jsx";
-import MinecraftLfgPostGenerator from "./pages/tools/minecraft/MinecraftLfgPostGenerator.jsx";
-import MinecraftMOTDGenerator from "./pages/tools/minecraft/MinecraftMOTDGenerator.jsx";
-import MinecraftWhitelistApplicationGenerator from "./pages/tools/minecraft/MinecraftWhitelistApplicationGenerator.jsx";
-import MinecraftServerPropertiesGenerator from "./pages/tools/minecraft/MinecraftServerPropertiesGenerator.jsx";
-import MinecraftCommandGenerator from "./pages/tools/minecraft/MinecraftCommandGenerator.jsx";
-import DiscordAnnouncementGenerator from "./pages/tools/discord/DiscordAnnouncementGenerator.jsx";
-import DiscordRulesGenerator from "./pages/tools/discord/DiscordRulesGenerator.jsx";
-import DiscordWelcomeMessageGenerator from "./pages/tools/discord/DiscordWelcomeMessageGenerator.jsx";
-import ServerMaintenanceMessageGenerator from "./pages/tools/server-admin/ServerMaintenanceMessageGenerator.jsx";
-import ServerStatusMessageGenerator from "./pages/tools/server-admin/ServerStatusMessageGenerator.jsx";
-import ProjectZomboidModListFormatter from "./pages/tools/project-zomboid/ProjectZomboidModListFormatter.jsx";
-import ProjectZomboidAdminMessageGenerator from "./pages/tools/project-zomboid/ProjectZomboidAdminMessageGenerator.jsx";
-import ValheimAdminCommandHelper from "./pages/tools/valheim/ValheimAdminCommandHelper.jsx";
-import ValheimServerRulesGenerator from "./pages/tools/valheim/ValheimServerRulesGenerator.jsx";
-import ValheimEventAnnouncementGenerator from "./pages/tools/valheim/ValheimEventAnnouncementGenerator.jsx";
-import ProjectZomboidServerSettingsHelper from "./pages/tools/project-zomboid/ProjectZomboidServerSettingsHelper.jsx";
-import ProjectZomboidSafehouseRulesGenerator from "./pages/tools/project-zomboid/ProjectZomboidSafehouseRulesGenerator.jsx";
-import ICARUSServerRulesGenerator from "./pages/tools/icarus/ICARUSServerRulesGenerator.jsx";
-import SevenDaysToDieServerRulesGenerator from "./pages/tools/7-days-to-die/SevenDaysToDieServerRulesGenerator.jsx";
-import NotFoundPage from "./pages/NotFoundPage.jsx";
-import AboutPage from "./pages/AboutPage.jsx";
-import ContactPage from "./pages/ContactPage.jsx";
+
+const ToolsIndex = lazy(() => import("./pages/tools/ToolsIndex.jsx"));
+
+const MinecraftWhitelistCommandGenerator = lazy(() =>
+  import("./pages/tools/minecraft/MinecraftWhitelistCommandGenerator.jsx")
+);
+const MinecraftServerRulesGenerator = lazy(() =>
+  import("./pages/tools/minecraft/MinecraftServerRulesGenerator.jsx")
+);
+const MinecraftLfgPostGenerator = lazy(() =>
+  import("./pages/tools/minecraft/MinecraftLfgPostGenerator.jsx")
+);
+const MinecraftMOTDGenerator = lazy(() =>
+  import("./pages/tools/minecraft/MinecraftMOTDGenerator.jsx")
+);
+const MinecraftWhitelistApplicationGenerator = lazy(() =>
+  import("./pages/tools/minecraft/MinecraftWhitelistApplicationGenerator.jsx")
+);
+const MinecraftServerPropertiesGenerator = lazy(() =>
+  import("./pages/tools/minecraft/MinecraftServerPropertiesGenerator.jsx")
+);
+const MinecraftCommandGenerator = lazy(() =>
+  import("./pages/tools/minecraft/MinecraftCommandGenerator.jsx")
+);
+
+const DiscordAnnouncementGenerator = lazy(() =>
+  import("./pages/tools/discord/DiscordAnnouncementGenerator.jsx")
+);
+const DiscordRulesGenerator = lazy(() =>
+  import("./pages/tools/discord/DiscordRulesGenerator.jsx")
+);
+const DiscordWelcomeMessageGenerator = lazy(() =>
+  import("./pages/tools/discord/DiscordWelcomeMessageGenerator.jsx")
+);
+
+const ServerMaintenanceMessageGenerator = lazy(() =>
+  import("./pages/tools/server-admin/ServerMaintenanceMessageGenerator.jsx")
+);
+const ServerStatusMessageGenerator = lazy(() =>
+  import("./pages/tools/server-admin/ServerStatusMessageGenerator.jsx")
+);
+
+const ProjectZomboidModListFormatter = lazy(() =>
+  import("./pages/tools/project-zomboid/ProjectZomboidModListFormatter.jsx")
+);
+const ProjectZomboidAdminMessageGenerator = lazy(() =>
+  import("./pages/tools/project-zomboid/ProjectZomboidAdminMessageGenerator.jsx")
+);
+const ProjectZomboidServerSettingsHelper = lazy(() =>
+  import("./pages/tools/project-zomboid/ProjectZomboidServerSettingsHelper.jsx")
+);
+const ProjectZomboidSafehouseRulesGenerator = lazy(() =>
+  import("./pages/tools/project-zomboid/ProjectZomboidSafehouseRulesGenerator.jsx")
+);
+
+const ValheimAdminCommandHelper = lazy(() =>
+  import("./pages/tools/valheim/ValheimAdminCommandHelper.jsx")
+);
+const ValheimServerRulesGenerator = lazy(() =>
+  import("./pages/tools/valheim/ValheimServerRulesGenerator.jsx")
+);
+const ValheimEventAnnouncementGenerator = lazy(() =>
+  import("./pages/tools/valheim/ValheimEventAnnouncementGenerator.jsx")
+);
+
+const ICARUSServerRulesGenerator = lazy(() =>
+  import("./pages/tools/icarus/ICARUSServerRulesGenerator.jsx")
+);
+const SevenDaysToDieServerRulesGenerator = lazy(() =>
+  import("./pages/tools/7-days-to-die/SevenDaysToDieServerRulesGenerator.jsx")
+);
+
+const GameServerAdminService = lazy(() =>
+  import("./pages/services/GameServerAdminService.jsx")
+);
+const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
+const AboutPage = lazy(() => import("./pages/AboutPage.jsx"));
+const ContactPage = lazy(() => import("./pages/ContactPage.jsx"));
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy.jsx"));
 const TermsOfUse = lazy(() => import("./pages/legal/TermsOfUse.jsx"));
 
@@ -119,6 +172,10 @@ export default function App() {
         <Route
           path="/tools/7-days-to-die-server-rules-generator"
           element={<SevenDaysToDieServerRulesGenerator />}
+        />
+        <Route
+          path="/services/game-server-admin"
+          element={<GameServerAdminService />}
         />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />

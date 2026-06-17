@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ToolBreadcrumbs from "./ToolBreadcrumbs.jsx";
 import RelatedTools from "./RelatedTools.jsx";
 import ToolsFooter from "./ToolsFooter.jsx";
@@ -36,6 +37,24 @@ function ToolPageLayout({
       {children}
 
       {seoContent}
+
+      {/* Small CTA after each tool */}
+      <section className="border-b border-slate-800/80">
+        <div className="mx-auto max-w-2xl px-4 py-8 sm:py-10 text-center">
+          <p className="text-sm font-semibold text-white">
+            Want this configured for your own server?
+          </p>
+          <p className="mt-1 text-xs text-slate-400">
+            I can help you set up a clean Discord/community structure, status channels, support flow, and admin handover.
+          </p>
+          <Link
+            to="/services/game-server-admin"
+            className="mt-3 inline-flex items-center justify-center rounded-xl border border-amber-500/30 bg-amber-500/10 px-5 py-2.5 text-sm font-semibold text-amber-400 hover:bg-amber-500/20 hover:text-amber-300 transition-colors"
+          >
+            Request setup help
+          </Link>
+        </div>
+      </section>
 
       {toolId && <RelatedTools currentToolId={toolId} />}
 
