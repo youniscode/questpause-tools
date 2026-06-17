@@ -24,6 +24,13 @@ function ToolsFooter() {
             </Link>
             <span className="text-slate-700 text-[10px] sm:text-xs">/</span>
             <Link
+              to="/services/game-server-admin"
+              className="hover:text-amber-400 hover:underline underline-offset-4 transition-colors whitespace-nowrap"
+            >
+              Services
+            </Link>
+            <span className="text-slate-700 text-[10px] sm:text-xs">/</span>
+            <Link
               to="/about"
               className="hover:text-amber-400 hover:underline underline-offset-4 transition-colors whitespace-nowrap"
             >

@@ -85,6 +85,9 @@ const SevenDaysToDieServerRulesGenerator = lazy(
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage.jsx"));
 const AboutPage = lazy(() => import("./pages/AboutPage.jsx"));
 const ContactPage = lazy(() => import("./pages/ContactPage.jsx"));
+const GameServerAdminSetup = lazy(
+  () => import("./pages/services/GameServerAdminSetup.jsx"),
+);
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy.jsx"));
 const TermsOfUse = lazy(() => import("./pages/legal/TermsOfUse.jsx"));
 
@@ -181,6 +184,10 @@ export default function App() {
         />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route
+          path="/services/game-server-admin"
+          element={<GameServerAdminSetup />}
+        />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
         <Route path="*" element={<NotFoundPage />} />

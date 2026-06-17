@@ -146,6 +146,32 @@ function ToolsIndex() {
           onCategoryChange={setActiveCategory}
         />
 
+        {/* Top CTA Banner */}
+        <section className="border-b border-slate-800/80">
+          <div className="mx-auto max-w-5xl px-4 py-5 sm:py-6">
+            <div className="rounded-2xl border border-amber-500/20 bg-gradient-to-r from-amber-500/5 to-transparent px-5 py-4 sm:px-6 sm:py-5 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-5">
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold text-white">
+                  Need help setting this up for your Discord or game server?
+                </p>
+                <p className="mt-0.5 text-xs text-slate-400">
+                  I can help you organize your Discord, roles, channels,
+                  onboarding, support flow, and basic server admin systems.
+                </p>
+              </div>
+              <Link
+                to="/services/game-server-admin"
+                className="inline-flex items-center gap-1.5 shrink-0 rounded-xl bg-amber-500 px-4 py-2 text-xs font-semibold text-slate-950 hover:bg-amber-400 transition-colors"
+              >
+                Get setup help
+                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {showPopular && <PopularTools tools={popularTools} />}
 
         {filtered.length === 0 ? (
@@ -190,6 +216,30 @@ function ToolsIndex() {
                             <ToolCard key={tool.id} tool={tool} />
                           ))}
                         </div>
+
+                        {(category === "Discord" || category === "Server Admin") && (
+                          <div className="mt-4 rounded-xl border border-slate-800 bg-slate-900/55 px-4 py-3 flex items-center justify-between gap-3">
+                            <div className="min-w-0">
+                              <p className="text-xs font-semibold text-white">
+                                Want this configured for your own server?
+                              </p>
+                              <p className="text-[11px] text-slate-400">
+                                I can help you set up a clean Discord/community
+                                structure, status channels, support flow, and
+                                admin handover.
+                              </p>
+                            </div>
+                            <Link
+                              to="/services/game-server-admin"
+                              className="inline-flex items-center gap-1 shrink-0 rounded-lg bg-amber-500 px-3 py-1.5 text-[11px] font-semibold text-slate-950 hover:bg-amber-400 transition-colors"
+                            >
+                              Request setup help
+                              <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                              </svg>
+                            </Link>
+                          </div>
+                        )}
                       </div>
                     ))}
 
@@ -320,6 +370,43 @@ function ToolsIndex() {
                         </p>
                       </div>
                     ))}
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Support */}
+            {activeCategory === "All" && !search && (
+              <section className="border-b border-slate-800/80">
+                <div className="mx-auto max-w-3xl px-4 py-8 sm:py-12 lg:py-14 text-center">
+                  <h2 className="text-lg sm:text-xl font-semibold text-white">
+                    Support QUESTPAUSE Tools
+                  </h2>
+                  <p className="mt-2 text-sm text-slate-400">
+                    These tools are free. If they helped you, you can support
+                    future updates.
+                  </p>
+                  <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    {/*
+                      REPLACE_ME: Paste your PayPal donation link below.
+                      Example: href="https://paypal.me/your-username"
+                    */}
+                    <a
+                      href="#"
+                      title="Replace # with your PayPal link"
+                      className="inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2.5 text-xs font-semibold text-slate-200 hover:border-amber-500/30 hover:text-amber-300 transition-colors"
+                    >
+                      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                      </svg>
+                      Support with PayPal
+                    </a>
+                    <Link
+                      to="/contact"
+                      className="inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2.5 text-xs font-semibold text-slate-200 hover:border-amber-500/30 hover:text-amber-300 transition-colors"
+                    >
+                      Contact for custom setup
+                    </Link>
                   </div>
                 </div>
               </section>
