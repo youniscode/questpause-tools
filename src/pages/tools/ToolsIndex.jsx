@@ -402,10 +402,10 @@ function ToolsIndex() {
                       Support with PayPal
                     </a>
                     <Link
-                      to="/contact"
+                      to="/services/game-server-admin"
                       className="inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2.5 text-xs font-semibold text-slate-200 hover:border-amber-500/30 hover:text-amber-300 transition-colors"
                     >
-                      Contact for custom setup
+                      Request setup help
                     </Link>
                   </div>
                 </div>

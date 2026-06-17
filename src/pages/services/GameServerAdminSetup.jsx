@@ -106,6 +106,8 @@ function GameServerAdminSetup() {
     package: "",
     message: "",
   });
+  const [formStatus, setFormStatus] = useState("idle");
+  const [copySuccess, setCopySuccess] = useState(false);
 
   useEffect(() => {
     setSEO(seo, "en");
@@ -117,24 +119,49 @@ function GameServerAdminSetup() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const subject = encodeURIComponent(
-      `Game Server Admin Setup Request from ${formData.name}`,
-    );
-    const body = encodeURIComponent(
-      [
-        `Name: ${formData.name}`,
-        `Email: ${formData.email}`,
-        `Discord: ${formData.discord || "N/A"}`,
-        `Community/Server: ${formData.community}`,
-        `Game: ${formData.game}`,
-        `Current problem: ${formData.problem}`,
-        `Package interest: ${formData.package || "N/A"}`,
-        `Message: ${formData.message}`,
-      ].join("\n"),
-    );
-    window.location.href = `mailto:contact@jonascode.com?subject=${subject}&body=${body}`;
+    setFormStatus("submitting");
+    try {
+      const data = new FormData();
+      data.append("name", formData.name);
+      data.append("email", formData.email);
+      data.append("discord", formData.discord || "N/A");
+      data.append("community", formData.community);
+      data.append("game", formData.game);
+      data.append("problem", formData.problem);
+      data.append("package", formData.package || "N/A");
+      data.append("message", formData.message);
+      data.append("_subject", `Game Server Admin Setup Request from ${formData.name}`);
+
+      const res = await fetch("https://formspree.io/f/xblpnjae", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setFormStatus("success");
+        setFormData({
+          name: "", email: "", discord: "", community: "",
+          game: "", problem: "", package: "", message: "",
+        });
+      } else {
+        setFormStatus("error");
+      }
+    } catch {
+      setFormStatus("error");
+    }
+  };
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("contact@jonascode.com");
+      setCopySuccess(true);
+      setTimeout(() => setCopySuccess(false), 2000);
+    } catch {
+      // clipboard not available
+    }
   };
 
   return (
@@ -283,13 +310,31 @@ function GameServerAdminSetup() {
             Want help setting up your gaming community?
           </h2>
           <p className="mt-2 text-sm text-slate-400 text-center">
-            Send me your Discord/server context and what you want to improve. I
-            will suggest the best starting point.
+            The fastest way is to join the QUESTPAUSE Discord and send me a
+            short message about your server, game, and what you want to improve.
           </p>
+
+          {/* Primary CTA */}
+          <div className="mt-6 rounded-2xl border border-amber-500/20 bg-gradient-to-r from-amber-500/5 to-transparent px-5 py-5 sm:px-6 sm:py-6 text-center">
+            <p className="text-sm text-slate-300">
+              Fastest way to contact me — send me a message in the QUESTPAUSE Discord.
+            </p>
+            <a
+              href="https://discord.gg/dUFtAPu48T"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-500 px-6 py-3 text-sm font-semibold text-white hover:bg-indigo-400 transition-colors"
+            >
+              <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276 14.091 14.091 0 001.2004-1.9482.0763.0763 0 00-.0415-.1057 13.1717 13.1717 0 01-1.8342-.8715.0766.0766 0 01-.0075-.1351c.1301-.0965.2597-.1968.3834-.2887a.0731.0731 0 01.074-.0063c3.8388 1.7459 7.9982 1.7459 11.7938 0a.0716.0716 0 01.0744.0063c.1245.092.2539.1922.3846.2889a.0763.0763 0 01-.0068.1348 13.212 13.212 0 01-1.8356.8708.0772.0772 0 00-.0414.1056c.361.6678.786 1.3217 1.2004 1.9484a.0757.0757 0 00.0844.0274c1.9556-.6066 3.944-1.5219 5.9968-3.0295a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189z" />
+              </svg>
+              Join Discord / Ask for setup help
+            </a>
+          </div>
 
           <form
             onSubmit={handleSubmit}
-            className="mt-6 flex flex-col gap-4"
+            className="mt-8 flex flex-col gap-4"
           >
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
@@ -416,21 +461,69 @@ function GameServerAdminSetup() {
               />
             </div>
 
+            {formStatus === "success" && (
+              <div className="rounded-xl border border-emerald-500/20 bg-emerald-500/5 px-4 py-3 text-sm text-emerald-300">
+                Thanks — your request was sent. I'll reply as soon as possible.
+              </div>
+            )}
+
+            {formStatus === "error" && (
+              <div className="rounded-xl border border-red-500/20 bg-red-500/5 px-4 py-3 text-sm text-red-300">
+                Something went wrong. You can contact me directly on{" "}
+                <a
+                  href="https://discord.gg/dUFtAPu48T"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-red-200"
+                >
+                  Discord
+                </a>.
+              </div>
+            )}
+
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-amber-400 transition-colors"
+              disabled={formStatus === "submitting"}
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-5 py-3 text-sm font-semibold text-slate-950 hover:bg-amber-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Request setup help
+              {formStatus === "submitting" ? "Sending..." : "Send request form"}
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
               </svg>
             </button>
-
-            <p className="text-xs text-slate-600 text-center">
-              Your information will be sent via email. No data is stored on a
-              server.
-            </p>
           </form>
+
+          {/* Backup contact options */}
+          <div className="mt-8 pt-6 border-t border-slate-800/60">
+            <h3 className="text-sm font-semibold text-white text-center">
+              Prefer direct contact?
+            </h3>
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
+              <a
+                href="https://discord.gg/dUFtAPu48T"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2.5 text-xs font-semibold text-slate-200 hover:border-indigo-500/30 hover:text-indigo-300 transition-colors"
+              >
+                Join Discord
+              </a>
+              <a
+                href="https://ko-fi.com/questpause"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2.5 text-xs font-semibold text-slate-200 hover:border-amber-500/30 hover:text-amber-300 transition-colors"
+              >
+                Support on Ko-fi
+              </a>
+              <button
+                type="button"
+                onClick={handleCopyEmail}
+                className="inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-800/50 px-4 py-2.5 text-xs font-semibold text-slate-200 hover:border-amber-500/30 hover:text-amber-300 transition-colors"
+              >
+                {copySuccess ? "Copied!" : "Copy email"}
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 
